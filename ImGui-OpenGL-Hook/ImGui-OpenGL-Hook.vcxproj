@@ -162,6 +162,9 @@
     <ClCompile Include="MinHook\src\hook.c" />
     <ClCompile Include="MinHook\src\trampoline.c" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\README.md" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
