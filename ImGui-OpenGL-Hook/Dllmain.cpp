@@ -148,7 +148,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD dwReason, LPVOID lpReserved)
     switch (dwReason)
     {
     case DLL_PROCESS_ATTACH:
-        if (!::GetModuleHandle("opengl32.dll"))
+        if (::GetModuleHandle("opengl32.dll") == NULL)
             return false;
 
         ::DisableThreadLibraryCalls(hModule);
@@ -156,7 +156,7 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD dwReason, LPVOID lpReserved)
         break;
 
     case DLL_PROCESS_DETACH:
-        Sleep(100);
+        ::Sleep(100);
         MH_Uninitialize();
         break;
     }

@@ -13,7 +13,7 @@
     const char* date = __DATE__; \
     const char* months = "JanFebMarAprMayJunJulAugSepOctNovDec"; \
     char month[4] = {date[0], date[1], date[2], '\0'}; \
-    int monthIndex = (strstr(months, month) - months) / 3 + 1; \
+    size_t monthIndex = (strstr(months, month) - months) / 3 + 1; \
     std::ostringstream oss; \
     oss << date + 7 << "." << (monthIndex < 10 ? "0" : "") << monthIndex << "." << (date[4] == ' ' ? '0' : date[4]) << date[5]; \
     static std::string buildDate = oss.str(); \
